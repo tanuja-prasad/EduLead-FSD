@@ -27,3 +27,4 @@ Thumbs.db
 *.pkl
 *.joblibdb.sqlite3
 env/
+env/
