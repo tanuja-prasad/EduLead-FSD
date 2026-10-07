@@ -1,5 +1,5 @@
 # Python
-venv/
+env/
 __pycache__/
 *.py[cod]
 
@@ -25,4 +25,6 @@ Thumbs.db
 
 # ML models - later
 *.pkl
-*.joblib
+*.joblibdb.sqlite3
+env/
+env/
