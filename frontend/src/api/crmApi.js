@@ -1,0 +1,20 @@
+import api from "./axios";
+
+export const getDashboard = () => api.get("dashboard/").then((response) => response.data);
+export const getOffices = () => api.get("offices/").then((response) => response.data.results || response.data);
+export const getEmployees = () => api.get("employees/").then((response) => response.data.results || response.data);
+export const getLeads = (params = {}) => api.get("leads/", { params }).then((response) => response.data.results || response.data);
+export const getLead = (id) => api.get(`leads/${id}/`).then((response) => response.data);
+export const createLead = (data) => api.post("leads/", data).then((response) => response.data);
+export const assignLead = (id, counsellorId) => api.post(`leads/${id}/assign/`, { counsellor_id: counsellorId }).then((response) => response.data);
+export const updateLeadStatus = (id, status, remark = "") => api.post(`leads/${id}/update_status/`, { status, remark }).then((response) => response.data);
+export const getHistory = (id) => api.get(`leads/${id}/history/`).then((response) => response.data);
+export const addHistory = (id, data) => api.post(`leads/${id}/history/`, data).then((response) => response.data);
+export const predictLead = (id) => api.post(`leads/${id}/predict/`).then((response) => response.data);
+export const getFollowups = () => api.get("followups/").then((response) => response.data.results || response.data);
+export const addFollowup = (data) => api.post("followups/", data).then((response) => response.data);
+export const predictAllLeads = () => api.post("leads/predict-all/").then((response) => response.data);
+export const getCallTranscripts = (leadId) => api.get("call-transcripts/", { params: { lead: leadId } }).then((response) => response.data.results || response.data);
+export const saveCallTranscript = (data) => api.post("call-transcripts/", data).then((response) => response.data);
+export const getMeetings = (leadId) => api.get("meetings/", { params: leadId ? { lead: leadId } : {} }).then((response) => response.data.results || response.data);
+export const scheduleMeeting = (data) => api.post("meetings/", data).then((response) => response.data);
