@@ -1,30 +1,27 @@
-# Python
-env/
-__pycache__/
-*.py[cod]
-
-# Environment variables
+# Secrets
 .env
+.env.*
 backend/.env
+frontend/.env
 
-# Django
-*.log
-staticfiles/
-media/
+# Python virtual environments
+env/
+venv/
+.venv/
+backend/env/
+frontend/env/
 
-# React / Node
+# Python cache
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
 frontend/node_modules/
-frontend/dist/
 
-# VS Code
+# Build output
+dist/
+
+# IDE
 .vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# ML models - later
-*.pkl
-*.joblibdb.sqlite3
-env/
-env/
+.idea/
